@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'correct_lists/index'
+
+  get 'correct_lists/new'
+
+  get 'correct_lists/create'
+
   #get 'file_imports/index'
   resource :file_imports do
     collection {post :import }
