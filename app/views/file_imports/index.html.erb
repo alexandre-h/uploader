@@ -1,48 +1,32 @@
-<h1>All data imported</h1>
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <%= form_tag import_file_imports_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag "Import" %>
+      <% end %>
+      <%= render 'correct_lists/index' %>
+      <table class="col-lg-7 col-lg-offset-1 col-xs-12" id="t01">
+        <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Error</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @data_imported.each do |data| %>
+            <tr>
+              <td><%= data.first_name %></td>
+              <td><%= data.last_name %></td>
+              <td><%= data.email %></td>
+              <td><%= data.refused_reason %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
 
-<p>Here all the data found in the file </p>
-<table>
-  <thead>
-  <tr>
-    <th>Nom</th>
-    <th>Prénom</th>
-    <th>Email</th>
-    <th>Error</th>
-</tr>
-  </thead>
-  <tbody>
-  <% @data_imported.each do |data| %>
-      <tr>
-        <td><%= data.first_name %></td>
-        <td><%= data.last_name %></td>
-        <td><%= data.email %></td>
-        <td><%= data.refused_reason %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-  <tr>
-    <th>Nom</th>
-    <th>Prénom</th>
-    <th>Email</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @correct_list.each do |data| %>
-      <tr>
-        <td><%= data.first_name %></td>
-        <td><%= data.last_name %></td>
-        <td><%= data.email %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-
-<%= form_tag import_file_imports_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import" %>
-<% end %>
+    </div>
+  </div>
+</div>

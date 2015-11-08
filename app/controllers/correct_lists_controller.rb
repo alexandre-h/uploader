@@ -1,14 +1,11 @@
 class CorrectListsController < ApplicationController
   def index
+    @all_correct_list = CorrectList.all
   end
 
   def new
   end
 
   def create
-    @correct_data = CorrectList.new
-    if @correct_data.save
-
-    end
   end
 end
