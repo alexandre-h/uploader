@@ -1,6 +1,6 @@
 <div class="container background">
   <div class="content">
-    <div class="row">
+    <div class="">
       <div class="col-lg-12">
         <%= form_tag import_file_imports_path, multipart: true do %>
             <%= file_field_tag :file, required: true %>
@@ -8,7 +8,7 @@
         <% end %>
         <%= form_for(@value, method: :get , url: root_path) do |f| %>
             <label>Please select a reporting :
-              <%= select_tag 'file_name', options_for_select(FileImport.order(id: :desc).collect{|u| ["#{u.file_name}", u.file_name,] },selected: @file_name), onchange: "this.form.submit();" %>
+              <%= select_tag 'file_name', options_for_select(FileName.order(id: :desc).collect{|u| ["#{u.file_name}", u.id,] },selected: @selected_file), onchange: "this.form.submit();" %>
             </label>
         <% end %>
 

@@ -11,18 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108142204) do
+ActiveRecord::Schema.define(version: 20151108171406) do
 
   create_table "correct_lists", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "file_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "file_name_id"
   end
 
-  add_index "correct_lists", ["file_name"], name: "index_correct_lists_on_file_name"
+  create_table "file_imported", force: :cascade do |t|
+    t.string   "file_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "file_imports", force: :cascade do |t|
     t.string   "last_name"
@@ -31,10 +35,21 @@ ActiveRecord::Schema.define(version: 20151108142204) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "refused_reason"
-    t.string   "file_name"
+    t.integer  "file_name_id"
   end
 
-  add_index "file_imports", ["file_name"], name: "index_file_imports_on_file_name"
   add_index "file_imports", ["refused_reason"], name: "index_file_imports_on_refused_reason"
+
+  create_table "file_names", force: :cascade do |t|
+    t.string   "file_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "file_uploadeds", force: :cascade do |t|
+    t.string   "file_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

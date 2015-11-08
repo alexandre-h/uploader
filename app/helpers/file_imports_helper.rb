@@ -4,7 +4,7 @@ module FileImportsHelper
     correct_email = check_email data.email
     nb_error = nil
     puts case
-           when FileImport.where(file_name: data.file_name).exists?(email: data.email) && FileImport.exists?(first_name: data.first_name, last_name: data.last_name)
+           when FileImport.where(file_name: data.file_name  ).exists?(email: data.email) && FileImport.exists?(first_name: data.first_name, last_name: data.last_name)
              data.refused_reason = "Error mail, first name and last name duplicated"
              nb_error  = 1
            when FileImport.where(file_name: data.file_name).exists?(first_name: data.first_name, last_name: data.last_name)
