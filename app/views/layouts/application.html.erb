@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav class="navbar navbar-default ">
+  <div class="container">
+    <div class="row">
+      <%= link_to "Home", root_path, class: 'btn btn-primary' %>
+      <%= link_to "Historique", file_imports_historique_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</nav>
 <%= yield %>
-
 </body>
 </html>

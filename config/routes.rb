@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resource :file_imports do
     collection {post :import }
   end
-
+  get 'file_imports/historique'
   root 'file_imports#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

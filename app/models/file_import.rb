@@ -2,7 +2,7 @@ class FileImport < ActiveRecord::Base
   require 'csv'
   include FileImportsHelper
 
-  scope :wrong_data, -> { where('refused_reason IS NOT NULL') }
+  scope :wrong_data, -> (file_name){ where('refused_reason IS NOT NULL AND file_name=:file_name', {file_name: file_name} )}
 
   def first_name=(s)
     write_attribute(:first_name, s.to_s.titleize)
@@ -13,8 +13,9 @@ class FileImport < ActiveRecord::Base
   end
 
   def self.import(file)
+    filename = {file_name:file.original_filename}
     CSV.foreach(file.path, headers: true) do |row|
-      FileImport.create! row.to_hash
+      FileImport.create! row.to_hash.merge filename
     end
   end
 
@@ -25,7 +26,7 @@ class FileImport < ActiveRecord::Base
   def save_correct_data
     email = error_list self
     if email
-      CorrectList.create!(first_name: self.first_name, last_name: self.last_name, email: self.email)
+      CorrectList.create!(first_name: self.first_name, last_name: self.last_name, email: self.email, file_name: self.file_name)
     end
   end
 

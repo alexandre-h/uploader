@@ -1,32 +1,43 @@
-<div class="container">
+<div class="container background">
   <div class="content">
     <div class="row">
-      <%= form_tag import_file_imports_path, multipart: true do %>
-          <%= file_field_tag :file %>
-          <%= submit_tag "Import" %>
-      <% end %>
-      <%= render 'correct_lists/index' %>
-      <table class="col-lg-7 col-lg-offset-1 col-xs-12" id="t01">
-        <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Email</th>
-          <th>Error</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @data_imported.each do |data| %>
-            <tr>
-              <td><%= data.first_name %></td>
-              <td><%= data.last_name %></td>
-              <td><%= data.email %></td>
-              <td><%= data.refused_reason %></td>
-            </tr>
+      <div class="col-lg-12">
+        <%= form_tag import_file_imports_path, multipart: true do %>
+            <%= file_field_tag :file, required: true %>
+            <%= submit_tag "Import" %>
         <% end %>
-        </tbody>
-      </table>
+        <%= form_for(@value, method: :get , url: root_path) do |f| %>
+            <label>Please select a reporting :
+              <%= select_tag 'file_name', options_for_select(FileImport.order(id: :desc).collect{|u| ["#{u.file_name}", u.file_name,] },selected: @file_name), onchange: "this.form.submit();" %>
+            </label>
+        <% end %>
 
+      </div>
+      <% if @data_imported.count == 0 %>
+          <%= render 'layouts/empty' %>
+      <% else %>
+          <%= render 'correct_lists/index' %>
+          <table class="col-lg-7 col-lg-offset-1 col-xs-12" id="t01">
+            <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Mail</th>
+              <th>Error</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @data_imported.each do |data| %>
+                <tr>
+                  <td><%= data.first_name %></td>
+                  <td><%= data.last_name %></td>
+                  <td><%= data.email %></td>
+                  <td><%= data.refused_reason %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+      <% end %>
     </div>
   </div>
 </div>

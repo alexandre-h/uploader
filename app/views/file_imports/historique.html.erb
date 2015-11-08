@@ -1,0 +1,30 @@
+<div class="container background">
+  <div class="content">
+    <div>
+      <% if @all_data_imported.count == 0 %>
+          <%= render 'layouts/empty' %>
+      <% else %>
+          <table class="col-lg-12" id="t01">
+            <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Mail</th>
+              <th>Error</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @all_data_imported.each do |data| %>
+                <tr>
+                  <td><%= data.first_name %></td>
+                  <td><%= data.last_name %></td>
+                  <td><%= data.email %></td>
+                  <td><%= data.refused_reason %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+      <% end %>
+    </div>
+  </div>
+</div>
