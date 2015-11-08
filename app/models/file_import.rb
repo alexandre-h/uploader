@@ -2,6 +2,8 @@ class FileImport < ActiveRecord::Base
   require 'csv'
   include FileImportsHelper
 
+  scope :wrong_data, -> { where('refused_reason IS NOT NULL') }
+
   def first_name=(s)
     write_attribute(:first_name, s.to_s.titleize)
   end
@@ -22,7 +24,7 @@ class FileImport < ActiveRecord::Base
 
   def save_correct_data
     email = error_list self
-    if email #!FileImport.exists?(email: self.email) && (!FileImport.exists?(first_name: self.first_name, last_name: self.last_name))
+    if email
       CorrectList.create!(first_name: self.first_name, last_name: self.last_name, email: self.email)
     end
   end
