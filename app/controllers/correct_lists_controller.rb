@@ -4,9 +4,4 @@ class CorrectListsController < ApplicationController
     @data_imported = FileImport.wrong_data @last_file
   end
 
-  def new
-  end
-
-  def create
-  end
 end

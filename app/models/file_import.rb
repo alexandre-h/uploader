@@ -13,15 +13,6 @@ class FileImport < ActiveRecord::Base
   def last_name=(s)
     write_attribute(:last_name, s.to_s.titleize)
   end
-  #
-  # def self.import(file)
-  #   FileName.create!(file_name: file.original_filename)
-  #   file_up = FileName.last
-  #   filename = {file_name: file_up}
-  #   CSV.foreach(file.path, headers: true) do |row|
-  #     FileImport.create! row.to_hash.merge filename
-  #   end
-  # end
 
   def self.import(file)
     FileName.create!(file_name: file.original_filename)
@@ -29,10 +20,8 @@ class FileImport < ActiveRecord::Base
     filename = {file_name: file_up}
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)
-#    puts "=====================iiiiiiiiiiii=#{header}======================"
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      puts "=====================iiiiiiiiiiiirow=#{row}======================"
       FileImport.create! row.to_hash.merge filename
     end
   end
@@ -56,5 +45,4 @@ class FileImport < ActiveRecord::Base
       CorrectList.create!(first_name: self.first_name, last_name: self.last_name, email: self.email, file_name: self.file_name)
     end
   end
-
 end

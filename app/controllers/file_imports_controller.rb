@@ -29,10 +29,4 @@ class FileImportsController < ApplicationController
       @all_data_imported = FileImport.where(file_name: @selected_file_historic)
     end
   end
-
-  def new
-  end
-
-  def delete
-  end
 end
