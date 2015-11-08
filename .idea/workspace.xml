@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="209ee485-ff64-44de-a76e-6b5d082095ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.rspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Guardfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/correct_list_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/correct_lists.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/file_import_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/file_imports.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/file_name_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/file_names.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/rails_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uploader.iml" afterPath="$PROJECT_DIR$/.idea/uploader.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uploader.iws" />
@@ -799,7 +784,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447013059205</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add rspec/ factory girls and guard">
+      <created>1447016342388</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1447016342388</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -847,7 +838,8 @@
     <MESSAGE value="Can select between the previous upload" />
     <MESSAGE value="Modification gemfile" />
     <MESSAGE value="Correction migration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction migration" />
+    <MESSAGE value="Add rspec/ factory girls and guard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add rspec/ factory girls and guard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
