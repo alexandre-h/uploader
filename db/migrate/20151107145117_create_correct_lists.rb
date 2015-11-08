@@ -1,5 +1,5 @@
 class CreateCorrectLists < ActiveRecord::Migration
-  def changeFil
+  def change
     create_table :correct_lists do |t|
       t.string :first_name
       t.string :last_name

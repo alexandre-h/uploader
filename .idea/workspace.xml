@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="209ee485-ff64-44de-a76e-6b5d082095ed" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb" afterPath="$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb" afterPath="$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="uploader.iws" />
@@ -34,16 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
@@ -84,21 +74,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20151108171406_add_file_name_to_correct_list.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="20151108171406_add_file_name_to_correct_list.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18255578">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20151107145117_create_correct_lists.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb">
+      <file leaf-file-name="20151108110610_add_column_refused_reason_to_file_import.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20151108110610_add_column_refused_reason_to_file_import.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="31" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="31" />
+              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20151107145117_create_correct_lists.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.30425963">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -146,7 +146,6 @@
         <option value="$PROJECT_DIR$/app/views/file_import/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/file_import/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/file_import_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20151108110610_add_column_refused_reason_to_file_import.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
@@ -180,6 +179,7 @@
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/db/migrate/20151108171149_add_file_name_to_file_import.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb" />
       </list>
     </option>
   </component>
@@ -739,7 +739,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447012244600</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Correction migration">
+      <created>1447012521285</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1447012521285</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -887,14 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="9" selection-start-line="45" selection-start-column="6" selection-end-line="53" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151108110610_add_column_refused_reason_to_file_import.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1089,18 +1087,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="31" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151108171406_add_file_name_to_correct_list.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20151108110610_add_column_refused_reason_to_file_import.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18255578">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20151107145117_create_correct_lists.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30425963">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
