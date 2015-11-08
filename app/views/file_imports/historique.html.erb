@@ -4,11 +4,13 @@
       <% if @all_data_imported.count == 0 %>
           <%= render 'layouts/empty' %>
       <% else %>
+          <div class="col-lg-12 my-form">
           <%= form_for(@value, method: :get , url: file_imports_historique_path) do |f| %>
               <label>Please select a reporting :
                 <%= select_tag 'file_name_historic', options_for_select(FileName.order(id: :desc).collect{|u| ["#{u.file_name}", u.id,] },selected: @selected_file_historic),include_blank: true, onchange: "this.form.submit();" %>
               </label>
           <% end %>
+          </div>
           <table class="col-lg-12" id="t01">
             <thead>
             <tr>

@@ -2,6 +2,7 @@ class FileImportsController < ApplicationController
   def index
     @value = FileImport.new
     @selected_file = params[:file_name]
+
     if @selected_file.nil?
       @last_file = FileName.last if FileName.last
       @data_imported = FileImport.wrong_data @last_file

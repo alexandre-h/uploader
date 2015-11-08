@@ -2,25 +2,19 @@ module FileImportsHelper
 
   def error_list data
     correct_email = check_email data.email
-    nb_error = nil
     puts case
            when FileImport.where(file_name: data.file_name  ).exists?(email: data.email) && FileImport.exists?(first_name: data.first_name, last_name: data.last_name)
              data.refused_reason = "Error mail, first name and last name duplicated"
-             nb_error  = 1
            when FileImport.where(file_name: data.file_name).exists?(first_name: data.first_name, last_name: data.last_name)
              data.refused_reason = "Already have this user"
-             nb_error = 2
            when FileImport.where(file_name: data.file_name).exists?(email: data.email)
              data.refused_reason = "Error mail duplicated"
-             nb_error  = 3
            when data.first_name.length < 3 || data.last_name.length < 3
              data.refused_reason = "first or/and last name too short"
-             nb_error = 4
            when  !correct_email
              data.refused_reason = "email format invalid"
-             nb_error = 5
          end
-    if nb_error.nil?
+    if data.refused_reason.nil? || data.refused_reason.empty?
       return true
     else
       return false
